@@ -1,0 +1,28 @@
+{% extends 'home.html'%}
+
+{% block content%}
+<h1>Multiple Contents</h1>
+
+<table>
+    <tr>
+        name
+    </tr>
+
+    {% for i in database %}
+    <tr>
+    <td>{{i.name}}</td>
+    <td><a href="{% url 'post' i.id %}">View</a></td>
+    <td><a href="{% url 'update' i.id %}">Update</a></td>
+    <td><a href="{% url 'delete' i.id %}">Delete</a></td>
+    {% endfor %}
+    </tr>
+
+
+</table>
+
+
+<br>
+<br>
+<br>
+
+{% endblock content%}
